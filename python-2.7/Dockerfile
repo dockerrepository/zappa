@@ -1,11 +1,9 @@
-FROM python:3.6.5
+FROM python:2.7.14
 
 LABEL maintainer="nielsonnas@gmail.com"
 
-RUN apt-get update && apt-get install openssl ca-certificates libxml2-dev libxslt-dev \
-    libffi-dev musl-dev postgresql-client
-
-RUN pip install -U pip virtualenv zappa
+RUN pip install -U virtualenv && \
+  pip install -U virtualenv zappa
 
 ADD ./entrypoint.sh /entrypoint.sh
 RUN sed -i 's/\r//' /entrypoint.sh
