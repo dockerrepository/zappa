@@ -33,6 +33,9 @@ build_python_2.7:
     - docker tag $CONTAINER_TEST_IMAGE $DOCKER_UMBU_REPOSITORY_PYTHON_27_BASE
     - docker push $DOCKER_UMBU_REPOSITORY_PYTHON_27
     - docker push $DOCKER_UMBU_REPOSITORY_PYTHON_27_BASE
+  only:
+    - /^v.*$/
+    - master
   tags:
     - build
 
@@ -48,5 +51,8 @@ build_python_3.6:
     - docker tag $CONTAINER_TEST_IMAGE $DOCKER_UMBU_REPOSITORY_PYTHON_35_BASE
     - docker push $DOCKER_UMBU_REPOSITORY_PYTHON_35
     - docker push $DOCKER_UMBU_REPOSITORY_PYTHON_35_BASE
+  only:
+    - /^v.*$/
+    - master
   tags:
     - build
