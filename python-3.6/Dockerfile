@@ -4,7 +4,7 @@ LABEL maintainer="nielsonnas@gmail.com"
 
 RUN pip install -U pip zappa
 
-ADD ./bashrc /root/bashrc_extras
+ADD ./bashrc.sh /root/bashrc_extras
 RUN sed -i 's/\r//' /root/bashrc_extras
 RUN chmod +x /root/bashrc_extras
 
