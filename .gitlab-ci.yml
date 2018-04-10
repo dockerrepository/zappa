@@ -14,7 +14,7 @@ before_script:
   - echo "Login"
   - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
   - echo $PASSWORD_DOCKER_HUB | docker login --username nsantana --password-stdin
-  - date=$(date +%Y-%m-%d)
+  - date=$(date +%Y-%m)
   - export DOCKER_UMBU_REPOSITORY_PYTHON_27=$DOCKER_UMBU_REPOSITORY_PYTHON_27_BASE-$date
   - export DOCKER_UMBU_REPOSITORY_PYTHON_35=$DOCKER_UMBU_REPOSITORY_PYTHON_35_BASE-$date
 
