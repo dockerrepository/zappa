@@ -2,6 +2,8 @@ FROM python:2.7.14
 
 LABEL maintainer="nielsonnas@gmail.com"
 
+RUN apt-get update && apt-get install gettext -y
+
 RUN pip install -U virtualenv && \
   pip install -U virtualenv zappa
 

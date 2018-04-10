@@ -2,6 +2,8 @@ FROM python:3.6.5
 
 LABEL maintainer="nielsonnas@gmail.com"
 
+RUN apt-get -y update && apt-get -y install gettext
+
 RUN pip install -U pip zappa
 
 ADD ./bashrc.sh /root/bashrc_extras
