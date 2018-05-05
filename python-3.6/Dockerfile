@@ -4,7 +4,7 @@ LABEL maintainer="nielsonnas@gmail.com"
 
 RUN apt-get -y update && apt-get -y install gettext
 
-RUN pip install -U zappa pip==9.0.3
+RUN pip install -U zappa pip==9.0.1
 
 ADD ./bashrc.sh /root/bashrc_extras
 RUN sed -i 's/\r//' /root/bashrc_extras
