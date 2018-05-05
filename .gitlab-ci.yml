@@ -28,7 +28,7 @@ build_python_2.7:
     - echo "Directory:" $(pwd)
     - git pull origin $CI_COMMIT_REF_NAME
     - echo "Branch:" $(git rev-parse --abbrev-ref HEAD)
-    - docker build -f ./python-2.7/Dockerfile --pull -t $CONTAINER_TEST_IMAGE .
+    - docker build -f ./python-2.7/Dockerfile --pull -t $CONTAINER_TEST_IMAGE ./python-2.7
     - docker tag $CONTAINER_TEST_IMAGE $DOCKER_UMBU_REPOSITORY_PYTHON_27
     - docker tag $CONTAINER_TEST_IMAGE $DOCKER_UMBU_REPOSITORY_PYTHON_27_BASE
     - docker push $DOCKER_UMBU_REPOSITORY_PYTHON_27
@@ -46,7 +46,7 @@ build_python_3.6:
     - echo "Directory:" $(pwd)
     - git pull origin $CI_COMMIT_REF_NAME
     - echo "Branch:" $(git rev-parse --abbrev-ref HEAD)
-    - docker build -f ./python-3.6/Dockerfile --pull -t $CONTAINER_TEST_IMAGE .
+    - docker build -f ./python-3.6/Dockerfile --pull -t $CONTAINER_TEST_IMAGE ./python-3.6
     - docker tag $CONTAINER_TEST_IMAGE $DOCKER_UMBU_REPOSITORY_PYTHON_35
     - docker tag $CONTAINER_TEST_IMAGE $DOCKER_UMBU_REPOSITORY_PYTHON_35_BASE
     - docker push $DOCKER_UMBU_REPOSITORY_PYTHON_35
