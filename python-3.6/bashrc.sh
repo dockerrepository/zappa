@@ -22,6 +22,7 @@ function install_zappa_in_venv(){
   if [ "$zappa_version_venv" = "" ]; then
       echo "Installing $zappa_version_os in venv."
       pip install $zappa_version_os > /dev/null
+      pip install "pip==9.0.3" > /dev/null
       echo "done."
   fi
 }
