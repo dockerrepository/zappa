@@ -4,8 +4,7 @@ LABEL maintainer="nielsonnas@gmail.com"
 
 RUN apt-get update && apt-get install -y gettext
 
-RUN pip install -U virtualenv && \
-  pip install -U virtualenv zappa pip==9.0.3
+RUN pip install -U virtualenv zappa pip==9.0.3
 
 ADD ./bashrc.sh /root/bashrc_extras
 RUN sed -i 's/\r//' /root/bashrc_extras
