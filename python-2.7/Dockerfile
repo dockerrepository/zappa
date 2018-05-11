@@ -9,6 +9,7 @@ RUN pip install -U virtualenv && pip install -r /root/requirements.txt
 
 ADD ./bashrc.sh /root/.bashrc
 RUN sed -i 's/\r//' /root/.bashrc
+RUN echo -e "tcp 6 TCP" > /etc/protocols # https://github.com/eventlet/eventlet/issues/370
 
 WORKDIR /var/task
 

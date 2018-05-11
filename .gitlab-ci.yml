@@ -36,7 +36,6 @@ build_python_2.7:
   only:
     - /^v.*$/
     - master
-    - build_from_github
   tags:
     - build
 
