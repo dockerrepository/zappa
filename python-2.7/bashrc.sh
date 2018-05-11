@@ -17,7 +17,6 @@ function activate_venv(){
 function install_zappa_in_venv(){
   activate_venv
   zappa_version_venv=$(pip freeze | grep zappa)
-  echo "zappa_version_venv" $zappa_version_venv
   if [ "$zappa_version_venv" = "" ]; then
       echo "Installing zappa in virtualenv (/var/venv)."
       pip install -r /root/requirements.txt > /dev/null
