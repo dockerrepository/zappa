@@ -3,7 +3,7 @@
 function init_venv(){
   # Create venv if not exists
   if [ ! -f /var/venv/bin/activate ]; then
-      echo "Creating /var/venv."
+      echo "Creating virtualenv (/var/venv)."
       virtualenv /var/venv
       echo "done."
   fi
@@ -14,15 +14,12 @@ function activate_venv(){
   source /var/venv/bin/activate
 }
 
-zappa_version_os=$(pip freeze | grep zappa)
-
 function install_zappa_in_venv(){
   activate_venv
   zappa_version_venv=$(pip freeze | grep zappa)
   if [ "$zappa_version_venv" = "" ]; then
-      echo "Installing $zappa_version_os in venv."
-      pip install $zappa_version_os > /dev/null
-      pip install "pip==9.0.3" > /dev/null
+      echo "Installing zappa in virtualenv (/var/venv)."
+      pip install -r requirements.txt > /dev/null
       echo "done."
   fi
 }

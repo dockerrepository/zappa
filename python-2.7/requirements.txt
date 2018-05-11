@@ -1,0 +1,1 @@
+-e git://github.com/miserlou/zappa.git@ddc071206b1c9f0d71a0113f4a193acf35933618#egg=zappa
