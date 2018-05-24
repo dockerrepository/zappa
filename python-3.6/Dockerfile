@@ -4,13 +4,11 @@ LABEL maintainer="nielsonnas@gmail.com"
 
 RUN apt-get -y update && apt-get -y install gettext
 
-RUN pip install -U zappa
+ADD ./requirements.txt /root/requirements.txt
+RUN pip install -U virtualenv && pip install -r /root/requirements.txt
 
-ADD ./bashrc.sh /root/bashrc_extras
-RUN sed -i 's/\r//' /root/bashrc_extras
-RUN chmod +x /root/bashrc_extras
-
-RUN echo "\nsource ~/bashrc_extras" >> /root/.bashrc
+ADD ./bashrc.sh /root/.bashrc
+RUN sed -i 's/\r//' /root/.bashrc
 
 WORKDIR /var/task
 
