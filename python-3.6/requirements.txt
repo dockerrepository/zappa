@@ -1,1 +1,1 @@
--e git://github.com/nielsonsantana/zappa.git@fee4dc0ec9d58c6a3148e93dd146f95446780c95#egg=zappa
+zappa==0.46.0
