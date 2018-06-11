@@ -1,23 +1,27 @@
 env:
   global:
-    - VERSION=0.46.0
-    - IMAGE_NAME=dockerrepository/zappa
+    - VERSION=0.46
   matrix:
     - DOCKER_BUILD_DIR=./python-2.7
-      DOCKERFILE=./python-3.6/Dockerfile
+      IMAGE_NAME=dockerrepository/zappa:2.7
     - DOCKER_BUILD_DIR=./python-3.6
+      IMAGE_NAME=dockerrepository/zappa:3.6
 
 sudo: required
 language: bash
 services:
   - docker
 
-jobs:
-  include:
-    - stage: build docker image
-      script:
-      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-      - docker build -t $IMAGE_NAME $DOCKER_BUILD_DIR
-      - docker tag $IMAGE_NAME $IMAGE_NAME:$VERSION
-      - docker push $IMAGE_NAME
-      - docker push $IMAGE_NAME:$VERSION
+build_image:
+  script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t $IMAGE_NAME $DOCKER_BUILD_DIR
+  - docker tag $IMAGE_NAME $IMAGE_NAME-$VERSION
+  - docker push $IMAGE_NAME
+  - docker push $IMAGE_NAME:-$VERSION
+  on:
+    branch:
+      - master
+
+notifications:
+  email: false
