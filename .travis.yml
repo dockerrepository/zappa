@@ -11,12 +11,14 @@ sudo: required
 services:
   - docker
 
-deploy:
-  provider: script
-  script: bash deploy_image.sh
-  on:
-    branch:
-      - master
+script: bash deploy_image.sh
+
+# deploy:
+#   provider: script
+#   script: bash deploy_image.sh
+#   on:
+#     branch:
+#       - master
 
 notifications:
   email: false
