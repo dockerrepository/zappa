@@ -8,11 +8,11 @@ env:
       IMAGE_NAME=dockerrepository/zappa:3.6
 
 sudo: required
-language: python
+language: bash
 services:
   - docker
 
-build_image:
+deploy:
   script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t $IMAGE_NAME $DOCKER_BUILD_DIR
