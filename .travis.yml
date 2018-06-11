@@ -8,17 +8,18 @@ env:
       IMAGE_NAME=dockerrepository/zappa:3.6
 
 sudo: required
+language: bash
 services:
   - docker
 
-script: bash deploy_image.sh
+script: bash build_image.sh
 
-# deploy:
-#   provider: script
-#   script: bash deploy_image.sh
-#   on:
-#     branch:
-#       - master
+deploy:
+  provider: script
+  script: bash deploy_image.sh
+  on:
+    branch:
+      - master
 
 notifications:
   email: false
