@@ -35,10 +35,7 @@ alias zappashell27='docker run -ti -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AW
 alias zappashell36='docker run -ti -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION -v $VIRTUALENV_DIR/$(getdirname):/var/venv -v $(pwd):/var/task --rm dockerrepository/zappa:3.6 bash'
 ```
 
--e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
-  -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
-
-##  Using Zappa
+####  Using Zappa
 ```bash
 export AWS_ACCESS_KEY_ID=access_key
 export AWS_SECRET_ACCESS_KEY=secret_key
@@ -84,7 +81,7 @@ Also, is need setup your aws credentials. This link describe how.
 https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html
 
 
-##  Using Zappa
+####  Using Zappa
 ```bash
 export AWS_PROFILE=my_profile
 export AWS_DEFAULT_REGION=us-east-1
