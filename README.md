@@ -53,14 +53,14 @@ export AWS_DEFAULT_REGION=us-east-1
 
 $ zappashell36
 #Creating virtualenv (/var/venv).
-#done.
-#Installing zappa(zappa==0.46.0) in virtualenv(/var/venv).
-#done.
+#Installing zappa(zappa==0.46.1) in virtualenv(/var/venv).
 # Install your requirements
 zappashell36> pip install -r requirements.txt
 # Deploy the project
 # zappa deploy <environment>
 zappashell36> zappa deploy staging
+# update project
+zappashell36> zappa update staging
 ```
 
 
@@ -98,9 +98,7 @@ export AWS_DEFAULT_REGION=us-east-1
 
 $ zappashell36
 #Creating virtualenv (/var/venv).
-#done.
-#Installing zappa(zappa==0.46.0) in virtualenv(/var/venv).
-#done.
+#Installing zappa(zappa==0.46.1) in virtualenv(/var/venv).
 # Install your requirements
 zappashell36> pip install -r requirements.txt
 # Deploy the project
