@@ -1,11 +1,21 @@
 # Zappa
 [Zappa](https://github.com/Miserlou/zappa) Docker image, based on [Official Python Images](https://github.com/docker-library/python)
 
-* Requires Docker to be installed and running :whale2: [Docker Install](https://docs.docker.com/engine/installation/)
+* Requires Docker to be installed and running [Docker Install](https://docs.docker.com/engine/installation/)
 * Alias it to easily build and deploy Zappa projects
 * Ensure you have the AWS API env vars set for access key, secret key and default region (or use AWS credential/config files)
 
-## Build the image
+## Use [Zappa image](https://hub.docker.com/r/dockerrepository/zappa/)
+
+```bash
+# Python 2.7
+$ docker pull dockerrepository/zappa:2.7
+
+# Python 3.6
+$ docker pull dockerrepository/zappa:3.6
+```
+
+## Or Build the image
 ```bash
 $ git clone https://github.com/dockerrepository/zappa.git
 # Build Python 2.7
