@@ -1,11 +1,13 @@
 env:
   global:
-    - VERSION=0.47.0
+    - VERSION=0.47
   matrix:
     - DOCKER_BUILD_DIR=./python-2.7
       IMAGE_NAME=dockerrepository/zappa:2.7
     - DOCKER_BUILD_DIR=./python-3.6
       IMAGE_NAME=dockerrepository/zappa:3.6
+    - DOCKER_BUILD_DIR=./python-3.7
+      IMAGE_NAME=dockerrepository/zappa:3.7
 
 sudo: required
 language: bash

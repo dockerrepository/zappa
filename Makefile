@@ -3,3 +3,6 @@ build_python27:
 
 build_python36:
 	docker build -f python-3.6/Dockerfile -t dockerrepository/zappa:3.6 ./python-3.6/
+
+build_python37:
+	docker build -f python-3.6/Dockerfile -t dockerrepository/zappa:3.6 ./python-3.7/
