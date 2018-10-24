@@ -1,6 +1,6 @@
 env:
   global:
-    - VERSION=0.47
+    - VERSION=0.46.2
   matrix:
     - DOCKER_BUILD_DIR=./python-2.7
       IMAGE_NAME=dockerrepository/zappa:2.7

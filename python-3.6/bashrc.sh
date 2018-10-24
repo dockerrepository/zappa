@@ -16,11 +16,11 @@ function activate_venv(){
 
 function install_zappa_in_venv(){
   activate_venv
-  installed_zappa_version=$(python -m pip freeze | grep zappa)
+  installed_zappa_version=$(pip freeze | grep zappa)
   requirments_zappa_version=$(cat /root/requirements.txt | grep zappa)
   if [ "$installed_zappa_version" != "$requirments_zappa_version" ]; then
       echo "Installing zappa($requirments_zappa_version) in virtualenv(/var/venv)."
-      python -m pip install -r /root/requirements.txt > /root/pip-log-requirements.txt
+      pip install -r /root/requirements.txt > /root/pip-log-requirements.txt
       echo "Logs: /root/pip-log-requirements.txt"
       echo "done."
   fi
